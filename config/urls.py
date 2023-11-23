@@ -17,10 +17,10 @@ Including another URLconf
 # Global
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.conf.urls.i18n import i18n_patterns
 # Main urls
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 # Views links
 
@@ -30,6 +30,9 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("i18n/", include("django.conf.urls.i18n")),
+    path('api-auth/', include('rest_framework.urls')),
+    path("", include("home.urls"), name="home")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
