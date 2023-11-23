@@ -1,4 +1,6 @@
 django
 pillow
 django-jazzmin
-rest_framework
+djangorestframework
+django-filter 
+markdown
