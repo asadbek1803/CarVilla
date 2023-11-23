@@ -1,4 +1,2 @@
 django
 pillow
-git
-os
