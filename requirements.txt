@@ -1,4 +1,6 @@
 django
 pillow
-git
-os
+django-jazzmin
+djangorestframework
+django-filter 
+markdown
