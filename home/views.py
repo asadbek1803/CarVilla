@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
-
+from django.contrib.auth import logout
 from .models import Service, New_cars, Feature_cars, Clients, Brands
 from rest_framework import viewsets, generics
 from .serializers import CarSearchSerializer
@@ -33,7 +33,7 @@ class Home(TemplateView):
             model = request.POST.get('model')
             price = request.POST.get('price')
 
-            return redirect(f"search/?search={year}&?search={horse_power}&?search={car_name}&?search={model}&?search={price}")
+            return redirect(f"search/?search={year}&&?search={horse_power}&&?search={car_name}&&?search={model}&&?search={price}")
 
 
 
@@ -50,3 +50,4 @@ class SearchCarAPIVEW(generics.ListCreateAPIView):
     filter_backends = (filters.SearchFilter,)
     queryset = Feature_cars.objects.all()
     serializer_class = CarSearchSerializer
+
