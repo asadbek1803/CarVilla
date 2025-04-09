@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*ne+0urv6b=(we+5s7dpvr$ntg&9ck1xx88q)05px(=bc&@ty=
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
+CSRF_TRUSTED_ORIGINS = ['https://carvilla-6e06.onrender.com']
 
 # Application definition
 
