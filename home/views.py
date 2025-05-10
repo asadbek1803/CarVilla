@@ -12,7 +12,7 @@ from rest_framework import filters
 # Create your views here.
 
 
-@method_decorator(login_required, name='dispatch')
+
 class Home(TemplateView):
     def get(self, request):
         data = {
@@ -38,13 +38,11 @@ class Home(TemplateView):
 
 
 
-@method_decorator(login_required, name='dispatch')
 class SearchViewSet(viewsets.ModelViewSet):
     queryset = Feature_cars.objects.all()
     serializer_class = CarSearchSerializer
 
 
-@method_decorator(login_required, name='dispatch')
 class SearchCarAPIVEW(generics.ListCreateAPIView):
     search_fields = ['year', 'horse_power', 'car_name', 'model', 'price']
     filter_backends = (filters.SearchFilter,)
