@@ -8,4 +8,3 @@ class Clients(models.Model):
 
     def __str__(self):
         return f"Client: {self.client_full_name}"
-

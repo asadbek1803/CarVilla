@@ -3,7 +3,12 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView
 from django.contrib.auth import logout
-from .models import Service, New_cars, Feature_cars, Clients, Brands
+
+from home.models.clients import Clients
+from home.models.new_cars import New_cars
+from home.models.feature_cars import Feature_cars
+from home.models.brands import Brands
+from home.models.service import Service
 from rest_framework import viewsets, generics
 from .serializers import CarSearchSerializer
 
@@ -43,6 +48,7 @@ class SearchViewSet(viewsets.ModelViewSet):
     serializer_class = CarSearchSerializer
 
 
+@method_decorator(login_required, name='dispatch')
 class SearchCarAPIVEW(generics.ListCreateAPIView):
     search_fields = ['year', 'horse_power', 'car_name', 'model', 'price']
     filter_backends = (filters.SearchFilter,)

@@ -19,4 +19,3 @@ class Feature_cars(models.Model):
         return f"{self.car_name} sell {self.price}"
 
 
-

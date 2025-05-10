@@ -1,7 +1,12 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 
-from .models import Clients, New_cars, Feature_cars, Brands, Service
+from home.models.clients import Clients
+from home.models.new_cars import New_cars
+from home.models.feature_cars import Feature_cars
+from home.models.brands import Brands
+from home.models.service import Service
+
 # Register your models here.
 
 @admin.register(Clients)

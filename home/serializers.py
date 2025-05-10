@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Feature_cars
+from home.models.feature_cars import Feature_cars
 class CarSearchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Feature_cars
